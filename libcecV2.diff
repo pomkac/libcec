@@ -1,0 +1,23 @@
+diff -uNr a/src/libcec/adapter/Exynos/ExynosCEC.h b/src/libcec/adapter/Exynos/ExynosCEC.h
+--- a/src/libcec/adapter/Exynos/ExynosCEC.h	2015-11-16 15:46:16.088642821 +0100
++++ b/src/libcec/adapter/Exynos/ExynosCEC.h	2015-11-16 15:52:25.186123674 +0100
+@@ -34,6 +34,6 @@
+ 
+ 
+ #define CEC_DEFAULT_PADDR   0x1000
+-#define CEC_PADDR_NAME      "/sys/module/s5p_hdmi/parameters/source_phy_addr"
++#define CEC_PADDR_NAME      "/sys/module/hdmi/parameters/cec_phy_addr"
+ #define CEC_IOC_SETLADDR    _IOW('c', 0, unsigned int)
+ #define CEC_MAX_FRAME_SIZE  16
+
+--- a/src/libcec/cmake/CheckPlatformSupport.cmake	2016-01-17 21:08:25.000000000 +0100
++++ b/src/libcec/cmake/CheckPlatformSupport.cmake	2016-01-17 21:10:10.423020032 +0100
+@@ -27,7 +27,7 @@
+ set(HAVE_LIBUDEV 0)
+ set(HAVE_RPI_API 0)
+ set(HAVE_TDA995X_API 0)
+-set(HAVE_EXYNOS_API 0)
++set(HAVE_EXYNOS_API 1)
+ set(HAVE_P8_USB_DETECT 0)
+ set(HAVE_DRM_EDID_PARSER 0)
+ # Pulse-Eight devices are always supported
